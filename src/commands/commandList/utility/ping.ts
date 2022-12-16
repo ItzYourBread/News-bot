@@ -6,6 +6,14 @@ export default {
 		description: "Ping pong"
 	},
 	run: async (client: Client, interaction: CommandInteraction) => {
-		console.log("Hello!")
+		try {
+			await interaction.createMessage({
+				content: `Ping Pong!`
+			})
+		} catch (err) {
+			await interaction.createMessage({
+				content: "Something is weong, try to contact developers!"
+			})
+		}
 	}
 }

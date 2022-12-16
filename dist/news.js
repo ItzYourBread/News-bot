@@ -8,6 +8,7 @@ var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 require("dotenv/config");
 console.clear();
 console.log(chalk_1.default.greenBright(figlet_1.default.textSync('News.', { horizontalLayout: 'full' })));
+require("./headquarter/web");
 var client = new eris_1.Client(process.env.TOKEN, {
     restMode: true,
     autoreconnect: true,
@@ -22,6 +23,7 @@ var client = new eris_1.Client(process.env.TOKEN, {
     intents: ['guilds', 'guildMessages', 'guildMembers', 'guildEmojis'],
 });
 listener_1.default.ready(client);
+listener_1.default.shardReady(client);
 listener_1.default.interactionCreate(client);
 var command_1 = require("./commands/command");
 (0, command_1.loadCommands)(client);

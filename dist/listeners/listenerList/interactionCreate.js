@@ -30,6 +30,6 @@ function interactionCreate(client) {
             }
         });
     }); });
-    console.log(chalk_1.default.cyanBright('[Event] interactionCreate is loaded'));
+    console.log(chalk_1.default.cyanBright('[Listener] interactionCreate is loaded'));
 }
 exports.interactionCreate = interactionCreate;

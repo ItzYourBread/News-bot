@@ -11,6 +11,8 @@ console.log(
     )
 );
 
+import "./headquarter/web"
+
 const client = new Client(process.env.TOKEN, {
     restMode: true,
     autoreconnect: true,
@@ -26,6 +28,7 @@ const client = new Client(process.env.TOKEN, {
 });
 
 listener.ready(client);
+listener.shardReady(client)
 listener.interactionCreate(client)
 
 import { loadCommands } from "./commands/command";

@@ -13,5 +13,5 @@ export function interactionCreate(client: Client) {
             }
         }
     });
-    console.log(chalk.cyanBright('[Event] interactionCreate is loaded'));
+    console.log(chalk.cyanBright('[Listener] interactionCreate is loaded'));
 }
