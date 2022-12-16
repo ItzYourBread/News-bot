@@ -1,0 +1,29 @@
+{
+  "name": "news-bot",
+  "version": "0.1.0",
+  "description": "A simple discord news bot for daily discord nusthell news",
+  "main": "./dist/news",
+  "scripts": {
+    "start": "node dist/news",
+    "build": "tsc",
+    "dev": "node dist/news",
+    "format": "prettier --write \"./src/**/*.ts\" \"./src/**/*.json\""
+  },
+  "author": "NotRealArif",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "dotenv": "^16.0.3",
+    "eris": "^0.17.1",
+    "figlet": "^1.5.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.8.0",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^18.11.15",
+    "prettier": "^2.8.1"
+  },
+  "keywords": []
+}
