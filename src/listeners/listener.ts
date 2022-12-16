@@ -1,3 +1,4 @@
 import { ready } from './listenerList/ready';
+import { interactionCreate } from "./listenerList/interactionCreate"
 
-export default { ready };
+export default { ready, interactionCreate };

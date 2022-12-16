@@ -22,4 +22,7 @@ var client = new eris_1.Client(process.env.TOKEN, {
     intents: ['guilds', 'guildMessages', 'guildMembers', 'guildEmojis'],
 });
 listener_1.default.ready(client);
+listener_1.default.interactionCreate(client);
+var command_1 = require("./commands/command");
+(0, command_1.loadCommands)(client);
 client.connect();

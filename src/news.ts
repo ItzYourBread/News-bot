@@ -26,5 +26,9 @@ const client = new Client(process.env.TOKEN, {
 });
 
 listener.ready(client);
+listener.interactionCreate(client)
+
+import { loadCommands } from "./commands/command";
+loadCommands(client)
 
 client.connect();

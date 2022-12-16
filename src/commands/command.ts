@@ -6,17 +6,15 @@ const commands = [];
 export { commands };
 
 export function loadCommands(client: Client) {
-    client.on('ready', async () => {
-        const commandFolders = readdirSync(
-            `./dist/structures/commands/commandList`
-        );
+	client.on("ready", async () => {
+		const commandFolders = readdirSync(`./dist/commands/commandList`);
         for (const folder of commandFolders) {
             const commandFiles = readdirSync(
-                `./dist/structures/commands/commandList/${folder}`
+                `./dist/commands/commandList/${folder}`
             ).filter((file) => file.endsWith('.js'));
             for (const file of commandFiles) {
                 const slashCommandObject = await import(
-                    `../structures/commands/commandList/${folder}/${file}`
+                    `./commandList/${folder}/${file}`
                 );
                 if (slashCommandObject.default.data.name) {
                     console.log(
@@ -34,10 +32,5 @@ export function loadCommands(client: Client) {
                 });
             }
         }
-    });
-    setTimeout(() => {
-        console.log(
-            chalk.blueBright(`[System] ${commands.length} commands is loaded`)
-        );
-    }, 70000);
+	});
 }

@@ -8,24 +8,24 @@ var commands = [];
 exports.commands = commands;
 function loadCommands(client) {
     var _this = this;
-    client.on('ready', function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
+    client.on("ready", function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
         var commandFolders, _i, commandFolders_1, folder, commandFiles, _a, commandFiles_1, file, slashCommandObject;
         return (0, tslib_1.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    commandFolders = (0, fs_1.readdirSync)("./dist/structures/commands/commandList");
+                    commandFolders = (0, fs_1.readdirSync)("./dist/commands/commandList");
                     _i = 0, commandFolders_1 = commandFolders;
                     _b.label = 1;
                 case 1:
                     if (!(_i < commandFolders_1.length)) return [3, 7];
                     folder = commandFolders_1[_i];
-                    commandFiles = (0, fs_1.readdirSync)("./dist/structures/commands/commandList/" + folder).filter(function (file) { return file.endsWith('.js'); });
+                    commandFiles = (0, fs_1.readdirSync)("./dist/commands/commandList/" + folder).filter(function (file) { return file.endsWith('.js'); });
                     _a = 0, commandFiles_1 = commandFiles;
                     _b.label = 2;
                 case 2:
                     if (!(_a < commandFiles_1.length)) return [3, 6];
                     file = commandFiles_1[_a];
-                    return [4, Promise.resolve().then(function () { return (0, tslib_1.__importStar)(require("../structures/commands/commandList/" + folder + "/" + file)); })];
+                    return [4, Promise.resolve().then(function () { return (0, tslib_1.__importStar)(require("./commandList/" + folder + "/" + file)); })];
                 case 3:
                     slashCommandObject = _b.sent();
                     if (slashCommandObject.default.data.name) {
@@ -49,8 +49,5 @@ function loadCommands(client) {
             }
         });
     }); });
-    setTimeout(function () {
-        console.log(chalk_1.default.blueBright("[System] " + commands.length + " commands is loaded"));
-    }, 70000);
 }
 exports.loadCommands = loadCommands;
