@@ -1,17 +1,15 @@
 import { Client } from 'eris';
 import listener from './listeners/listener';
-import figlet from "figlet"
-import chalk from "chalk"
+import figlet from 'figlet';
+import chalk from 'chalk';
 import 'dotenv/config';
 
 console.clear();
 console.log(
-    chalk.greenBright(
-        figlet.textSync('News.', { horizontalLayout: 'full' })
-    )
+    chalk.greenBright(figlet.textSync('News.', { horizontalLayout: 'full' }))
 );
 
-import "./headquarter/web"
+import './headquarter/web';
 
 const client = new Client(process.env.TOKEN, {
     restMode: true,
@@ -28,10 +26,10 @@ const client = new Client(process.env.TOKEN, {
 });
 
 listener.ready(client);
-listener.shardReady(client)
-listener.interactionCreate(client)
+listener.shardReady(client);
+listener.interactionCreate(client);
 
-import { loadCommands } from "./commands/command";
-loadCommands(client)
+import { loadCommands } from './commands/command';
+loadCommands(client);
 
 client.connect();

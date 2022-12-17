@@ -1,2 +1,2 @@
 import 'dotenv/config';
-import "./headquarter/web";
+import './headquarter/web';

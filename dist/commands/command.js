@@ -8,7 +8,7 @@ var commands = [];
 exports.commands = commands;
 function loadCommands(client) {
     var _this = this;
-    client.on("ready", function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
+    client.on('ready', function () { return (0, tslib_1.__awaiter)(_this, void 0, void 0, function () {
         var commandFolders, _i, commandFolders_1, folder, commandFiles, _a, commandFiles_1, file, slashCommandObject;
         return (0, tslib_1.__generator)(this, function (_b) {
             switch (_b.label) {

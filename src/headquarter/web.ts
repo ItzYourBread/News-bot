@@ -1,7 +1,7 @@
-import express from "express";
+import express from 'express';
 
 const app = express();
 
 app.listen(process.env.PORT, () => {
-	console.log("Web working!!")
-})
+    console.log('Web working!!');
+});

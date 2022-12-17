@@ -6,8 +6,8 @@ const commands = [];
 export { commands };
 
 export function loadCommands(client: Client) {
-	client.on("ready", async () => {
-		const commandFolders = readdirSync(`./dist/commands/commandList`);
+    client.on('ready', async () => {
+        const commandFolders = readdirSync(`./dist/commands/commandList`);
         for (const folder of commandFolders) {
             const commandFiles = readdirSync(
                 `./dist/commands/commandList/${folder}`
@@ -32,5 +32,5 @@ export function loadCommands(client: Client) {
                 });
             }
         }
-	});
+    });
 }
