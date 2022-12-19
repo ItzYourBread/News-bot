@@ -59,9 +59,9 @@ exports.default = {
                     finished_1.description +=
                         '\n\nHope you will enjoy amazing news from News bot!';
                     if (!(Data.channel && client.getChannel(Data.channel))) return [3, 4];
-                    finished_1.description = "**" + interaction.member.guild.name + "** has already setup the channel";
+                    finished_1.description = "**" + interaction.member.guild.name + "** has already setup the news channel";
                     finished_1.description +=
-                        '\nIf you have any issues run `/reset` to delete the setup';
+                        '\nIf you have any issues run `/reset` to delete & create the setup again!';
                     return [3, 7];
                 case 4: return [4, client.createChannel(interaction.guildID, 'news🗞', 0)];
                 case 5:
@@ -71,7 +71,6 @@ exports.default = {
                         })];
                 case 6:
                     webhookID = _a.sent();
-                    console.log(webhookID);
                     Data.channel = channelID.id;
                     Data.webhook = "https://discord.com/api/webhooks/" + webhookID.id + "/" + webhookID.token;
                     Data.save();
