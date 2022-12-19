@@ -4,6 +4,7 @@ var tslib_1 = require("tslib");
 var eris_1 = require("eris");
 var listener_1 = (0, tslib_1.__importDefault)(require("./listeners/listener"));
 var figlet_1 = (0, tslib_1.__importDefault)(require("figlet"));
+var mongoose_1 = (0, tslib_1.__importDefault)(require("mongoose"));
 var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 require("dotenv/config");
 console.clear();
@@ -21,6 +22,15 @@ var client = new eris_1.Client(process.env.TOKEN, {
         roles: true,
     },
     intents: ['guilds', 'guildMessages', 'guildMembers', 'guildEmojis'],
+});
+mongoose_1.default
+    .connect(process.env.DATABASE)
+    .then(function () {
+    console.log(chalk_1.default.greenBright('[Database] Connected'));
+})
+    .catch(function (err) {
+    console.log(chalk_1.default.red('[Database] ⚠️ Unable to connect to MongoDB Database.\nError: ' +
+        err));
 });
 listener_1.default.ready(client);
 listener_1.default.shardReady(client);

@@ -4,6 +4,6 @@ declare const _default: {
         name: string;
         description: string;
     };
-    run: (client: Client, interaction: CommandInteraction) => Promise<void>;
+    run: (client: Client, interaction: CommandInteraction) => Promise<import("eris").Message<import("eris").TextableChannel>>;
 };
 export default _default;

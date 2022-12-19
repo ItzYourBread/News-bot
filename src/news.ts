@@ -1,6 +1,7 @@
 import { Client } from 'eris';
 import listener from './listeners/listener';
 import figlet from 'figlet';
+import mongoose from 'mongoose';
 import chalk from 'chalk';
 import 'dotenv/config';
 
@@ -24,6 +25,20 @@ const client = new Client(process.env.TOKEN, {
     },
     intents: ['guilds', 'guildMessages', 'guildMembers', 'guildEmojis'],
 });
+
+mongoose
+    .connect(process.env.DATABASE)
+    .then(() => {
+        console.log(chalk.greenBright('[Database] Connected'));
+    })
+    .catch((err) => {
+        console.log(
+            chalk.red(
+                '[Database] ⚠️ Unable to connect to MongoDB Database.\nError: ' +
+                    err
+            )
+        );
+    });
 
 listener.ready(client);
 listener.shardReady(client);
