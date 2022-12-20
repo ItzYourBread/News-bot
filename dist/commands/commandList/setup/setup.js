@@ -29,6 +29,18 @@ exports.default = {
                                 ],
                             })];
                     }
+                    if (!interaction.member.permission.has("manageChannels")) {
+                        return [2, interaction.editOriginalMessage({
+                                embeds: [
+                                    {
+                                        title: 'Failed!',
+                                        color: Number(config.colour.failed),
+                                        description: "I don't have `Manage Channels` permission!",
+                                        timestamp: new Date(),
+                                    },
+                                ],
+                            })];
+                    }
                     progress = {
                         title: 'Setup loading...',
                         color: Number(config.colour.embed),
@@ -61,7 +73,7 @@ exports.default = {
                     if (!(Data.channel && client.getChannel(Data.channel))) return [3, 4];
                     finished_1.description = "**" + interaction.member.guild.name + "** has already setup the news channel";
                     finished_1.description +=
-                        '\nIf you have any issues run `/reset` to delete & create the setup again!';
+                        '\nIf you have any issue, please run `/reset` to delete & create the setup again!';
                     return [3, 7];
                 case 4: return [4, client.createChannel(interaction.guildID, 'news🗞', 0)];
                 case 5:

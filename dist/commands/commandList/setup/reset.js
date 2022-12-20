@@ -74,7 +74,8 @@ exports.default = {
                     }
                     else {
                         finished_1.description = "**" + interaction.member.guild.name + "** haven't setup the news channel!";
-                        finished_1.description += "\nTry to run `/setup` to setup the news channel";
+                        finished_1.description +=
+                            '\nTry to run `/setup` to setup the news channel';
                     }
                     setTimeout(function () {
                         interaction.editOriginalMessage({

@@ -49,7 +49,7 @@ export default {
             if (Data.channel && client.getChannel(Data.channel)) {
                 client.deleteChannel(Data.channel);
 
-                setTimeout(async() => {
+                setTimeout(async () => {
                     let channelID = await client.createChannel(
                         interaction.guildID,
                         'news🗞',
@@ -66,16 +66,18 @@ export default {
                     Data.save();
                 }, 2000);
             } else {
-				finished.description = `**${interaction.member!.guild.name}** haven't setup the news channel!`;
-				finished.description += "\nTry to run `/setup` to setup the news channel"
+                finished.description = `**${
+                    interaction.member!.guild.name
+                }** haven't setup the news channel!`;
+                finished.description +=
+                    '\nTry to run `/setup` to setup the news channel';
             }
 
-			setTimeout(() => {
+            setTimeout(() => {
                 interaction.editOriginalMessage({
                     embeds: [finished],
                 });
             }, 1250);
-			
         } catch (err) {
             console.error(err);
             return interaction.editOriginalMessage({
