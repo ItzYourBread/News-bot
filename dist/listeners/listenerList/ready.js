@@ -5,7 +5,7 @@ var tslib_1 = require("tslib");
 var chalk_1 = (0, tslib_1.__importDefault)(require("chalk"));
 function ready(client) {
     client.on('ready', function () {
-        client.editStatus('idle', {
+        client.editStatus('online', {
             name: 'Daily amanzing news for Discord',
             type: 0,
         });
