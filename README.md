@@ -5,7 +5,7 @@ News bot is known as for Discord events, features, blogs, servers It's sends dis
 
 Best of luck NotRealArif 21/12/2022
 
-# News's Commands!
+# News's Commands
 Here you can find all the commands
 
 **/setup**
@@ -19,3 +19,5 @@ Get commands & info help.
 
 **/ping**
 Ping Pong
+
+# Have a nice day!
