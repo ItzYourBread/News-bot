@@ -22,7 +22,7 @@ exports.default = {
         ],
     },
     run: function (client, interaction) { return (0, tslib_1.__awaiter)(void 0, void 0, void 0, function () {
-        var Data, commands, allbuttons;
+        var Data, commands, allbuttons, info;
         return (0, tslib_1.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4, guildConfig_1.database.findOne({ id: interaction.guildID })];
@@ -103,12 +103,25 @@ exports.default = {
                         })];
                 case 2:
                     _a.sent();
-                    return [3, 4];
+                    return [3, 5];
                 case 3:
-                    if (interaction.data.options[0].name === 'info') {
-                    }
-                    _a.label = 4;
-                case 4: return [2];
+                    if (!(interaction.data.options[0].name === 'info')) return [3, 5];
+                    info = {
+                        title: client.user.username + "'s Info",
+                        color: Number(config.colour.embed),
+                        description: "News bot is known as for Discord events, features, blogs, servers"
+                            + " It's sends discord related news in a server specific channel which is created by News bot,"
+                            + " it's help new users to get discord new updates news & upcoming features patch in mini form"
+                            + " reason we made the bot because there is no discord bot related to discord bot, and"
+                            + " we claim that we are the first discord related news & patch bot."
+                            + "\n\nBest of luck NotRealArif 21/12/2022",
+                        timestamp: new Date()
+                    };
+                    return [4, interaction.createMessage({ embeds: [info] })];
+                case 4:
+                    _a.sent();
+                    _a.label = 5;
+                case 5: return [2];
             }
         });
     }); },

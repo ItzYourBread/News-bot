@@ -11,7 +11,7 @@ export default {
         try {
             await interaction.defer();
 
-            if (!interaction.member.permission.has('administrator')) {
+            if (!interaction.member.permissions.has('administrator')) {
                 return interaction.editOriginalMessage({
                     embeds: [
                         {
@@ -19,20 +19,6 @@ export default {
                             color: Number(config.colour.failed),
                             description:
                                 "You don't have `Administrator` permission!",
-                            timestamp: new Date(),
-                        },
-                    ],
-                });
-            }
-
-            if (!interaction.member.permission.has('manageChannels')) {
-                return interaction.editOriginalMessage({
-                    embeds: [
-                        {
-                            title: 'Failed!',
-                            color: Number(config.colour.failed),
-                            description:
-                                "I don't have `Manage Channels` permission!",
                             timestamp: new Date(),
                         },
                     ],
@@ -97,14 +83,13 @@ export default {
                 });
             }, 1250);
         } catch (err) {
-            console.error(err);
             return interaction.editOriginalMessage({
                 embeds: [
                     {
-                        title: 'Setup failed!',
+                        title: 'Failed!',
                         color: Number(config.colour.failed),
                         description:
-                            'Something went wrong please notify our developers',
+                            "I don't have `Manage Channels` permission!",
                         timestamp: new Date(),
                     },
                 ],

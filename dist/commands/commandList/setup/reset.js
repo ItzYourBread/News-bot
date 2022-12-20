@@ -85,13 +85,12 @@ exports.default = {
                     return [3, 5];
                 case 4:
                     err_1 = _a.sent();
-                    console.error(err_1);
                     return [2, interaction.editOriginalMessage({
                             embeds: [
                                 {
-                                    title: 'Setup failed!',
+                                    title: 'Failed!',
                                     color: Number(config.colour.failed),
-                                    description: 'Something went wrong please notify our developers',
+                                    description: "I don't have `Manage Channels` permission!",
                                     timestamp: new Date(),
                                 },
                             ],

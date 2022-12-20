@@ -79,14 +79,13 @@ export default {
                 });
             }, 1250);
         } catch (err) {
-            console.error(err);
             return interaction.editOriginalMessage({
                 embeds: [
                     {
-                        title: 'Setup failed!',
+                        title: 'Failed!',
                         color: Number(config.colour.failed),
                         description:
-                            'Something went wrong please notify our developers',
+                            "I don't have `Manage Channels` permission!",
                         timestamp: new Date(),
                     },
                 ],

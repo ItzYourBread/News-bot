@@ -17,25 +17,13 @@ exports.default = {
                     return [4, interaction.defer()];
                 case 1:
                     _a.sent();
-                    if (!interaction.member.permission.has('administrator')) {
+                    if (!interaction.member.permissions.has('administrator')) {
                         return [2, interaction.editOriginalMessage({
                                 embeds: [
                                     {
                                         title: 'Failed!',
                                         color: Number(config.colour.failed),
                                         description: "You don't have `Administrator` permission!",
-                                        timestamp: new Date(),
-                                    },
-                                ],
-                            })];
-                    }
-                    if (!interaction.member.permission.has('manageChannels')) {
-                        return [2, interaction.editOriginalMessage({
-                                embeds: [
-                                    {
-                                        title: 'Failed!',
-                                        color: Number(config.colour.failed),
-                                        description: "I don't have `Manage Channels` permission!",
                                         timestamp: new Date(),
                                     },
                                 ],
@@ -96,13 +84,12 @@ exports.default = {
                     return [3, 9];
                 case 8:
                     err_1 = _a.sent();
-                    console.error(err_1);
                     return [2, interaction.editOriginalMessage({
                             embeds: [
                                 {
-                                    title: 'Setup failed!',
+                                    title: 'Failed!',
                                     color: Number(config.colour.failed),
-                                    description: 'Something went wrong please notify our developers',
+                                    description: "I don't have `Manage Channels` permission!",
                                     timestamp: new Date(),
                                 },
                             ],
