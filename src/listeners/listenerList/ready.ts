@@ -3,7 +3,7 @@ import chalk from 'chalk';
 
 export function ready(client: Client) {
     client.on('ready', () => {
-        client.editStatus('idle', {
+        client.editStatus('online', {
             name: 'Daily amanzing news for Discord',
             type: 0,
         });
