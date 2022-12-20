@@ -3,11 +3,13 @@ import path from 'path';
 import fetch from 'node-fetch';
 import bodyParser from 'body-parser';
 import { database } from '../models/guildConfig';
-var app = express();
+import * as config from "../config.json"
+	
+const app = express();
 
 let news = {
     title: '',
-    color: Number('0x696969'),
+    color: Number(config.colour.news),
     description: '',
     timestamp: new Date(),
 };
@@ -32,7 +34,7 @@ const sendFunction = async (n) => {
         });
         //test
     }
-    return 'OK All Send!';
+    return 'Already news has been send to the discord app!!!!';
 };
 
 app.use(bodyParser.json());

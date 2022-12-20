@@ -6,10 +6,11 @@ var path_1 = (0, tslib_1.__importDefault)(require("path"));
 var node_fetch_1 = (0, tslib_1.__importDefault)(require("node-fetch"));
 var body_parser_1 = (0, tslib_1.__importDefault)(require("body-parser"));
 var guildConfig_1 = require("../models/guildConfig");
+var config = (0, tslib_1.__importStar)(require("../config.json"));
 var app = (0, express_1.default)();
 var news = {
     title: '',
-    color: Number('0x696969'),
+    color: Number(config.colour.news),
     description: '',
     timestamp: new Date(),
 };
@@ -46,7 +47,7 @@ var sendFunction = function (n) { return (0, tslib_1.__awaiter)(void 0, void 0, 
             case 4:
                 i++;
                 return [3, 2];
-            case 5: return [2, 'OK All Send!'];
+            case 5: return [2, 'Already news has been send to the discord app!!!!'];
         }
     });
 }); };
