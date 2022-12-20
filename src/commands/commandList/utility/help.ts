@@ -29,28 +29,28 @@ export default {
                 title: `${client.user.username}'s Commands!`,
                 color: Number(config.colour.embed),
                 description: 'Here you can find all the commands',
-				fields: [
-					{
-						name: "</setup:0>",
-						value: "Set the news channel in your server.",
-						inline: false
-					},
-					{
-						name: "</reset:0>",
-						value: "Reset the news channel if its not working.",
-						inline: false
-					},
-					{
-						name: "</help:0>",
-						value: "Get commands & info help.",
-						inline: false
-					},
-					{
-						name: "</ping:0>",
-						value: "Ping Pong",
-						inline: false
-					}
-				],
+                fields: [
+                    {
+                        name: '</setup:0>',
+                        value: 'Set the news channel in your server.',
+                        inline: false,
+                    },
+                    {
+                        name: '</reset:0>',
+                        value: 'Reset the news channel if its not working.',
+                        inline: false,
+                    },
+                    {
+                        name: '</help:0>',
+                        value: 'Get commands & info help.',
+                        inline: false,
+                    },
+                    {
+                        name: '</ping:0>',
+                        value: 'Ping Pong',
+                        inline: false,
+                    },
+                ],
                 footer: {
                     text: 'Pages: 1/1',
                 },
@@ -91,9 +91,9 @@ export default {
                 ],
             };
 
-			allbuttons.components.map((d) => {
-				d.disabled = true
-			})
+            allbuttons.components.map((d) => {
+                d.disabled = true;
+            });
 
             await interaction.createMessage({
                 embeds: [commands],

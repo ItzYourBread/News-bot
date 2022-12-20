@@ -29,7 +29,7 @@ exports.default = {
                                 ],
                             })];
                     }
-                    if (!interaction.member.permission.has("manageChannels")) {
+                    if (!interaction.member.permission.has('manageChannels')) {
                         return [2, interaction.editOriginalMessage({
                                 embeds: [
                                     {

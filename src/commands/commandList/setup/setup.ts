@@ -25,8 +25,8 @@ export default {
                 });
             }
 
-			if (!interaction.member.permission.has("manageChannels")) {
-				return interaction.editOriginalMessage({
+            if (!interaction.member.permission.has('manageChannels')) {
+                return interaction.editOriginalMessage({
                     embeds: [
                         {
                             title: 'Failed!',
@@ -37,7 +37,7 @@ export default {
                         },
                     ],
                 });
-			}
+            }
 
             let progress = {
                 title: 'Setup loading...',
